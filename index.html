@@ -1,188 +1,670 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Purely Pinnables</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purely Pinnables | Curated Finds</title>
+  <meta
+    name="description"
+    content="Curated home, beauty, kitchen, and pet finds from Purely Pinnables."
+  />
   <style>
+    :root {
+      --bg: #f8f4ef;
+      --bg-2: #f5efe8;
+      --card: #fffdfb;
+      --card-2: #fffaf7;
+      --text: #3f352f;
+      --muted: #7b6d65;
+      --accent: #b8865b;
+      --accent-dark: #9d7048;
+      --line: #eadfd4;
+      --shadow: 0 12px 32px rgba(82, 58, 42, 0.08);
+      --shadow-soft: 0 8px 22px rgba(82, 58, 42, 0.05);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f6f1eb;
-      color: #333;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.95) 0%, rgba(251,247,243,0.98) 28%, rgba(245,239,232,1) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
     }
 
     header {
-      text-align: center;
-      padding: 30px;
+      padding: 28px 0 12px;
     }
 
-    .logo {
-      max-width: 250px;
-      border-radius: 20px;
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(234, 223, 212, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .site-logo {
+      width: min(340px, 72vw);
+      height: auto;
+      border-radius: 22px;
+      background: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      justify-content: center;
+      width: 100%;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: #fffaf6;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 36px 0 40px;
+      position: relative;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .side-card,
+    .category-card,
+    .product-card,
+    .about-card,
+    .disclosure-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 54px;
+      background:
+        radial-gradient(circle at top left, rgba(255, 248, 241, 0.95) 0%, rgba(255, 253, 251, 0.98) 42%, rgba(255, 250, 246, 1) 100%),
+        linear-gradient(135deg, rgba(184, 134, 91, 0.06), rgba(255,255,255,0));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      bottom: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,134,91,0.12) 0%, rgba(184,134,91,0.03) 45%, transparent 72%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      background: linear-gradient(180deg, #f9efe5 0%, #f5e6d7 100%);
+      border: 1px solid #eedbc8;
+      padding: 8px 13px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(184, 134, 91, 0.08);
     }
 
     h1, h2, h3 {
-      margin: 0 0 10px;
+      margin: 0 0 14px;
+      line-height: 1.15;
     }
 
-    .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 30px 20px;
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      letter-spacing: -0.045em;
+      max-width: 720px;
     }
 
-    .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    h2 {
+      font-size: clamp(1.6rem, 2.2vw, 2.2rem);
     }
 
-    .card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      transition: 0.2s;
+    h3 {
+      font-size: 1.15rem;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    .hero-text {
+      font-size: 1.07rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 28px;
     }
 
-    .card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-    }
-
-    .content {
-      padding: 20px;
-    }
-
-    .tag {
-      font-size: 12px;
-      background: #e9dccf;
-      padding: 5px 10px;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 10px;
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 10px;
-      padding: 12px 18px;
-      background: #b8865b;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.22s ease;
+      box-shadow: 0 10px 22px rgba(82, 58, 42, 0.06);
     }
 
-    .btn:hover {
-      opacity: 0.9;
+    .btn-primary {
+      background: linear-gradient(180deg, #c18f61 0%, #ae7a50 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(180deg, #b68458 0%, #9f6f49 100%);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.9);
+    }
+
+    .btn-secondary:hover {
+      background: #fffaf6;
+      transform: translateY(-1px);
+    }
+
+    .side-card {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      background: linear-gradient(180deg, rgba(255,253,251,0.96) 0%, rgba(255,249,244,0.98) 100%);
+    }
+
+    .side-image {
+      min-height: 300px;
+      border-radius: 20px;
+      background:
+        linear-gradient(rgba(255,255,255,0.16), rgba(255,255,255,0.28)),
+        url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .category-grid,
+    .product-grid,
+    .info-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .category-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .category-card {
+      padding: 24px;
+      background: linear-gradient(180deg, #fffdfb 0%, #fffaf7 100%);
+      transition: 0.22s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(82, 58, 42, 0.10);
+    }
+
+    .category-card p {
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+    }
+
+    .category-links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .category-item-link {
+      display: block;
+      padding: 11px 14px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.94rem;
+      transition: 0.2s ease;
+    }
+
+    .category-item-link:hover {
+      transform: translateY(-1px);
+      background: #fcf6f0;
+    }
+
+    .product-card {
+      overflow: hidden;
+      transition: 0.22s ease;
+      background: linear-gradient(180deg, #fffdfb 0%, #fffaf7 100%);
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(82, 58, 42, 0.11);
+    }
+
+    .product-image {
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .product-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(63,53,47,0.10), rgba(63,53,47,0));
+    }
+
+    .product-content {
+      padding: 22px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: linear-gradient(180deg, #f7ebdf 0%, #f4e4d4 100%);
+      color: var(--accent-dark);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      box-shadow: 0 6px 14px rgba(184, 134, 91, 0.08);
+    }
+
+    .product-content p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 0.95rem;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mini-btn {
+      padding: 11px 15px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: white;
+      transition: 0.2s ease;
+    }
+
+    .mini-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .mini-btn.primary {
+      background: linear-gradient(180deg, #c18f61 0%, #ae7a50 100%);
+      color: white;
+      border-color: #b68458;
+    }
+
+    .about-card,
+    .disclosure-card {
+      padding: 30px;
+      background: linear-gradient(180deg, #fffdfb 0%, #fffaf7 100%);
+    }
+
+    ul.clean {
+      padding-left: 18px;
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 40px 0 58px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-wrap {
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-wrap,
+      .product-grid,
+      .info-grid,
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 34px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        align-items: flex-start;
+      }
+
+      .hero-card,
+      .side-card,
+      .category-card,
+      .product-content,
+      .about-card,
+      .disclosure-card {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .hero-card {
+        padding-top: 28px;
+        padding-bottom: 28px;
+      }
+
+      .product-image {
+        height: 220px;
+      }
     }
   </style>
 </head>
-
 <body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="logo-wrap" aria-label="Purely Pinnables home">
+        <img src="logo.png" alt="Purely Pinnables logo" class="site-logo" />
+      </a>
 
-<header>
-  <img src="logo.png" class="logo">
-</header>
-
-<!-- 🔥 FEATURED FIRST -->
-<section class="section">
-  <h2>Trending Finds You’ll Actually Use</h2>
-
-  <div class="grid">
-
-    <!-- PRODUCT 1 -->
-    <div class="card">
-      <img src="https://i.pinimg.com/736x/6a/1c/2f/6a1c2f7fdf4b6f475bfbd5cdb93eefe2.jpg">
-      <div class="content">
-        <div class="tag">Viral Beauty Pick</div>
-        <h3>Hourglass Veil Hydrating Skin Tint</h3>
-        <p>
-          Want that flawless, dewy “clean girl” glow everyone’s obsessed with? This viral skin tint delivers a radiant finish while keeping your skin hydrated all day.
-        </p>
-        <a class="btn" href="https://www.amazon.com/Hourglass-Veil-Hydrating-Tint-Shade/dp/B0CFWPPPCL?tag=purelypinnabl-20" target="_blank">
-          View on Amazon
-        </a>
-      </div>
+      <nav class="nav-links">
+        <a href="#featured">Featured Finds</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- PRODUCT 2 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
-      <div class="content">
-        <div class="tag">Home Upgrade</div>
-        <h3>Minimalist Bedroom Refresh Pick</h3>
-        <p>
-          Instantly elevate your space with this clean, aesthetic bedroom upgrade that looks expensive but feels effortless.
-        </p>
-        <a class="btn" href="https://www.amazon.com/" target="_blank">
-          View on Amazon
-        </a>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-card">
+          <div class="eyebrow">Curated lifestyle finds</div>
+          <h1>Cozy, useful, and aesthetic finds worth clicking.</h1>
+          <p class="hero-text">
+            Welcome to Purely Pinnables — a simple place to browse hand-picked home, beauty, kitchen, pet, and everyday favorites. I share pretty finds that are practical, giftable, and easy to shop.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#featured">Shop Featured Picks</a>
+            <a class="btn btn-secondary" href="#categories">Browse Categories</a>
+          </div>
+        </div>
+
+        <aside class="side-card">
+          <div class="side-image" aria-label="cozy lifestyle image"></div>
+          <div>
+            <h3>Fresh picks for Pinterest shoppers</h3>
+            <p class="small-note">
+              This page is designed to make it easy for visitors to discover your favorite Amazon finds without feeling cluttered or salesy.
+            </p>
+          </div>
+        </aside>
       </div>
-    </div>
+    </section>
 
-    <!-- PRODUCT 3 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e">
-      <div class="content">
-        <div class="tag">Pet Pick</div>
-        <h3>Useful Everyday Pet Essential</h3>
-        <p>
-          A simple, practical pet product that makes daily life easier for both you and your pet.
-        </p>
-        <a class="btn" href="https://www.amazon.com/" target="_blank">
-          View on Amazon
-        </a>
+    <section id="featured">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Top picks</div>
+            <h2>Featured finds</h2>
+            <p>Highlight your strongest click magnets here with one clear button straight to Amazon.</p>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="product-content">
+              <div class="tag">Home Upgrade</div>
+              <h3>Minimalist Bedroom Refresh Pick</h3>
+              <p>A simple featured card area for one of your top Pinterest products. Add the exact product name and your affiliate link here.</p>
+              <div class="product-actions">
+                <a class="mini-btn primary" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">View on Amazon</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image" style="background-image:url('https://i.pinimg.com/736x/6a/1c/2f/6a1c2f7fdf4b6f475bfbd5cdb93eefe2.jpg');"></div>
+            <div class="product-content">
+              <div class="tag">Viral Beauty Pick</div>
+              <h3>Hourglass Veil Hydrating Skin Tint</h3>
+              <p>
+                Want that flawless, dewy “clean girl” glow everyone’s obsessed with? This viral skin tint delivers a radiant, natural finish while keeping your skin hydrated all day. Lightweight, blendable, and perfect for no-makeup makeup looks.
+              </p>
+              <div class="product-actions">
+                <a class="mini-btn primary" href="https://www.amazon.com/Hourglass-Veil-Hydrating-Tint-Shade/dp/B0CFWPPPCL?crid=1WJS0I0U4O4DB&dib=eyJ2IjoiMSJ9.tkDIVEemMvH1GrWhv40fkxogPIHkRpQ8tgTcr_9BRfNndP1TRfoLnyvhNytASSr70Fz2Hmv2J5quQyCUW_8b5H2sJ6-vK3iKsLNt9f5ZkIlyuqAXnakmtqWXj5zUyF0Toa_xGL0AvderxSEl8yppxGelTxVBA36A_LiDMxOf3NbheZERjHBKZQrY11uiJ6A_LTo3Wxa7J4iM0NWOhOuUN6EkOIa_WWNREmf1qH6UeLIN1FPGKvxoT01JgSL9qeGssD4cQjyJ69OEjRv7tCUJkQ_Yvn-QcmMomk6BBRILVxk.UMa0KRzqPLKzbgWVfoZBp9caW678zrFNYQHoZU4aYPU&dib_tag=se&keywords=Hourglass%2BVeil%2BHydrating%2BSkin%2BTint&qid=1774892981&sprefix=hourglass%2Bveil%2Bhydrating%2Bskin%2Btint%2Caps%2C299&sr=8-1&th=1&utm_source=Pinterest&utm_medium=organic&linkCode=ll2&tag=purelypinnabl-20&linkId=68f8d3dad4881f7e57d97c9d9980dc24&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">View on Amazon</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="product-content">
+              <div class="tag">Pet Pick</div>
+              <h3>Useful Everyday Pet Essential</h3>
+              <p>Highlight a pet product, explain why people love it in one sentence, and give visitors a clear next step.</p>
+              <div class="product-actions">
+                <a class="mini-btn primary" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">See Product</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <section id="categories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Browse favorites</div>
+            <h2>Curated categories</h2>
+            <p>Tap into the product groups your Pinterest visitors are most likely to shop first.</p>
+          </div>
+        </div>
 
-<!-- 🧱 CATEGORIES SECOND -->
-<section class="section">
-  <h2>Shop by Category</h2>
+        <div class="category-grid">
+          <article class="category-card">
+            <h3>Home Finds</h3>
+            <p>Decor, organization, cozy upgrades, and budget-friendly pieces that make a space feel elevated.</p>
+            <div class="category-links-list">
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Home Pick 1</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Home Pick 2</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Home Pick 3</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Home Pick 4</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Home Pick 5</a>
+            </div>
+          </article>
 
-  <div class="grid">
+          <article class="category-card">
+            <h3>Kitchen Favorites</h3>
+            <p>Useful gadgets, countertop must-haves, storage helpers, and everyday tools worth having.</p>
+            <div class="category-links-list">
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Kitchen Pick 1</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Kitchen Pick 2</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Kitchen Pick 3</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Kitchen Pick 4</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Kitchen Pick 5</a>
+            </div>
+          </article>
 
-    <div class="card">
-      <div class="content">
-        <h3>Home Finds</h3>
-        <a class="btn" href="#">View Picks</a>
+          <article class="category-card">
+            <h3>Beauty Picks</h3>
+            <p>Trending skincare, beauty tools, and self-care products that are popular for a reason.</p>
+            <div class="category-links-list">
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Beauty Pick 1</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Beauty Pick 2</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Beauty Pick 3</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Beauty Pick 4</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Beauty Pick 5</a>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <h3>Pet Essentials</h3>
+            <p>Smart, cute, and functional finds for pet owners who want products that actually help.</p>
+            <div class="category-links-list">
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Pet Pick 1</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Pet Pick 2</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Pet Pick 3</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Pet Pick 4</a>
+              <a class="category-item-link" href="https://www.amazon.com/" target="_blank" rel="noopener sponsored nofollow">Pet Pick 5</a>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <div class="content">
-        <h3>Kitchen Favorites</h3>
-        <a class="btn" href="#">View Picks</a>
+    <section>
+      <div class="container info-grid">
+        <div class="about-card" id="about">
+          <h2>About Purely Pinnables</h2>
+          <p>
+            Purely Pinnables is a curated shopping page built to help visitors discover stylish, practical, and popular finds in one place. Everything is organized simply so it feels easy to browse from Pinterest to product.
+          </p>
+          <ul class="clean">
+            <li>Clean bridge page for Pinterest traffic</li>
+            <li>Mobile-friendly layout</li>
+            <li>Easy to update with new links and product titles</li>
+            <li>Designed for lifestyle, home, beauty, kitchen, and pet niches</li>
+          </ul>
+        </div>
+
+        <div class="disclosure-card" id="disclosure">
+          <h2>Affiliate Disclosure</h2>
+          <p>
+            As an Amazon Associate, I may earn from qualifying purchases. Some links on this site are affiliate links, which means I may earn a small commission at no extra cost to you.
+          </p>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>© 2026 Purely Pinnables. All rights reserved.</div>
+      <div>Built for curated lifestyle finds and Pinterest-friendly browsing.</div>
     </div>
-
-    <div class="card">
-      <div class="content">
-        <h3>Beauty Picks</h3>
-        <a class="btn" href="#">View Picks</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="content">
-        <h3>Pet Essentials</h3>
-        <a class="btn" href="#">View Picks</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+  </footer>
 </body>
 </html>
