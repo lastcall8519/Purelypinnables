@@ -24,7 +24,8 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #fbf7f3 0%, #f5efe8 100%);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.95) 0%, rgba(251,247,243,0.98) 28%, rgba(245,239,232,1) 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -96,7 +97,8 @@
     }
 
     .hero {
-      padding: 26px 0 32px;
+      padding: 36px 0 40px;
+      position: relative;
     }
 
     .hero-wrap {
@@ -140,16 +142,17 @@
 
     .eyebrow {
       display: inline-block;
-      font-size: 0.8rem;
-      letter-spacing: 1.4px;
+      font-size: 0.78rem;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
       color: var(--accent-dark);
-      background: #f6ebe0;
+      background: linear-gradient(180deg, #f9efe5 0%, #f5e6d7 100%);
       border: 1px solid #eedbc8;
-      padding: 8px 12px;
+      padding: 8px 13px;
       border-radius: 999px;
       margin-bottom: 18px;
       font-weight: 700;
+      box-shadow: 0 8px 20px rgba(184, 134, 91, 0.08);
     }
 
     h1, h2, h3 {
@@ -178,23 +181,32 @@
 
     .btn {
       display: inline-block;
-      padding: 14px 20px;
+      padding: 14px 22px;
       border-radius: 999px;
       font-weight: 700;
-      transition: 0.2s ease;
+      transition: 0.22s ease;
+      box-shadow: 0 10px 22px rgba(82, 58, 42, 0.06);
     }
 
     .btn-primary {
-      background: var(--accent);
+      background: linear-gradient(180deg, #c18f61 0%, #ae7a50 100%);
       color: white;
     }
 
-    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-primary:hover {
+      background: linear-gradient(180deg, #b68458 0%, #9f6f49 100%);
+      transform: translateY(-1px);
+    }
 
     .btn-secondary {
       border: 1px solid var(--line);
       color: var(--text);
-      background: white;
+      background: rgba(255,255,255,0.9);
+    }
+
+    .btn-secondary:hover {
+      background: #fffaf6;
+      transform: translateY(-1px);
     }
 
     .side-card {
@@ -203,14 +215,16 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 18px;
+      background: linear-gradient(180deg, rgba(255,253,251,0.96) 0%, rgba(255,249,244,0.98) 100%);
     }
 
     .side-image {
-      min-height: 280px;
-      border-radius: 16px;
+      min-height: 300px;
+      border-radius: 20px;
       background:
-        linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)),
+        linear-gradient(rgba(255,255,255,0.16), rgba(255,255,255,0.28)),
         url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
     }
 
     .small-note {
@@ -227,7 +241,7 @@
       justify-content: space-between;
       gap: 20px;
       align-items: end;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       flex-wrap: wrap;
     }
 
@@ -329,13 +343,14 @@
 
     .tag {
       display: inline-block;
-      background: #f6ebe0;
+      background: linear-gradient(180deg, #f7ebdf 0%, #f4e4d4 100%);
       color: var(--accent-dark);
       border-radius: 999px;
-      padding: 6px 10px;
+      padding: 6px 11px;
       font-size: 0.78rem;
       font-weight: 700;
       margin-bottom: 12px;
+      box-shadow: 0 6px 14px rgba(184, 134, 91, 0.08);
     }
 
     .product-content p {
@@ -351,18 +366,23 @@
     }
 
     .mini-btn {
-      padding: 11px 14px;
+      padding: 11px 15px;
       border-radius: 999px;
       font-size: 0.9rem;
       font-weight: 700;
       border: 1px solid var(--line);
       background: white;
+      transition: 0.2s ease;
+    }
+
+    .mini-btn:hover {
+      transform: translateY(-1px);
     }
 
     .mini-btn.primary {
-      background: var(--accent);
+      background: linear-gradient(180deg, #c18f61 0%, #ae7a50 100%);
       color: white;
-      border-color: var(--accent);
+      border-color: #b68458;
     }
 
     .info-grid {
@@ -500,8 +520,9 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Shop by category</h2>
-            <p>Replace these category links with your own Amazon storefront page, list page, or individual affiliate links.</p>
+            <div class="eyebrow">Browse favorites</div>
+            <h2>Curated categories</h2>
+            <p>Tap into the product groups your Pinterest visitors are most likely to shop first.</p>
           </div>
         </div>
 
@@ -561,8 +582,9 @@
       <div class="container">
         <div class="section-head">
           <div>
+            <div class="eyebrow">Top picks</div>
             <h2>Featured finds</h2>
-            <p>Swap each button below with your real affiliate links and change the images or product names anytime.</p>
+            <p>Highlight your strongest click magnets here with one clear button straight to Amazon.</p>
           </div>
         </div>
 
