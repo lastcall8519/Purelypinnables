@@ -75,33 +75,37 @@
       text-align: center;
     }
 
-    .logo-stack {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-wrap {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      padding: 12px;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--silver-line);
-      box-shadow: var(--shadow);
-    }
-
-   .site-logo {
-  width: min(680px, 92vw);
-  height: auto;
-  border-radius: 22px;
-  background: white;
+   .logo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+   .logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 34px;
+  background: rgba(255,255,255,0.58);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(192, 192, 192, 0.5);
+  box-shadow: 0 8px 22px rgba(82, 58, 42, 0.06);
+  width: min(980px, 94vw);
 }
 
+ .site-logo {
+  width: 100%;
+  max-width: 920px;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+  background: white;
+  display: block;
+}
     .pinterest-btn {
       display: inline-flex;
       align-items: center;
