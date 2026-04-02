@@ -17,8 +17,11 @@
       --text: #3f352f;
       --muted: #7b6d65;
       --accent: #b8865b;
+      --accent-soft: #d4b08a;
+      --accent-soft-dark: #b89673;
       --accent-dark: #9d7048;
       --line: #eadfd4;
+      --silver-line: rgba(192, 192, 192, 0.72);
       --shadow: 0 12px 32px rgba(82, 58, 42, 0.08);
       --shadow-soft: 0 8px 22px rgba(82, 58, 42, 0.05);
       --radius: 22px;
@@ -88,7 +91,7 @@
       border-radius: 30px;
       background: rgba(255,255,255,0.72);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(234, 223, 212, 0.9);
+      border: 1px solid var(--silver-line);
       box-shadow: var(--shadow);
     }
 
@@ -100,25 +103,32 @@
     }
 
     .pinterest-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px 14px; /* smaller */
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: white;
-  background: linear-gradient(180deg, #d4b08a 0%, #b89673 100%); /* soft gold */
-  box-shadow: 0 6px 14px rgba(184, 134, 91, 0.18);
-  transition: 0.22s ease;
-  border: 1px solid rgba(192, 192, 192, 0.7);
-}
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: white;
+      background: linear-gradient(180deg, #d4b08a 0%, #b89673 100%);
+      box-shadow: 0 6px 14px rgba(184, 134, 91, 0.18);
+      transition: 0.22s ease;
+      border: 1px solid rgba(160, 130, 100, 0.25);
+    }
 
     .pinterest-btn:hover {
-  background: linear-gradient(180deg, #c7a27c 0%, #a88462 100%);
-  transform: translateY(-1px);
-}
+      background: linear-gradient(180deg, #c7a27c 0%, #a88462 100%);
+      transform: translateY(-1px);
+    }
+
+    .pinterest-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
 
     .nav-links {
       display: flex;
@@ -141,7 +151,9 @@
     }
 
     .nav-links a:hover {
-      background: #fffaf6;
+      background: #fcf6f0;
+      border-color: rgba(184, 134, 91, 0.28);
+      color: var(--accent-dark);
       transform: translateY(-1px);
     }
 
@@ -263,7 +275,9 @@
     }
 
     .btn-secondary:hover {
-      background: #fffaf6;
+      background: #fcf6f0;
+      border-color: rgba(184, 134, 91, 0.28);
+      color: var(--accent-dark);
       transform: translateY(-1px);
     }
 
@@ -311,8 +325,7 @@
     }
 
     .category-grid,
-    .product-grid,
-    .info-grid {
+    .product-grid {
       display: grid;
       gap: 18px;
     }
@@ -323,10 +336,6 @@
 
     .product-grid {
       grid-template-columns: repeat(3, 1fr);
-    }
-
-    .info-grid {
-      grid-template-columns: 1fr 1fr;
     }
 
     .category-card {
@@ -368,6 +377,8 @@
     .category-item-link:hover {
       transform: translateY(-1px);
       background: #fcf6f0;
+      border-color: rgba(184, 134, 91, 0.3);
+      box-shadow: 0 8px 18px rgba(82, 58, 42, 0.05);
     }
 
     .product-card {
@@ -443,10 +454,29 @@
       border-color: #b68458;
     }
 
-    .about-card,
-    .disclosure-card {
+    .mini-btn.primary:hover {
+      background: linear-gradient(180deg, #b68458 0%, #9f6f49 100%);
+    }
+
+    .about-card {
       padding: 30px;
       background: linear-gradient(180deg, #fffdfb 0%, #fffaf7 100%);
+    }
+
+    .disclosure-card {
+      padding: 16px 18px;
+      margin-top: 16px;
+      max-width: 680px;
+      font-size: 0.84rem;
+      color: var(--muted);
+      background: linear-gradient(180deg, #fffdfb 0%, #fffaf8 100%);
+      box-shadow: 0 8px 20px rgba(82, 58, 42, 0.04);
+    }
+
+    .disclosure-card h3 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      color: var(--text);
     }
 
     ul.clean {
@@ -473,7 +503,6 @@
     @media (max-width: 980px) {
       .hero-wrap,
       .product-grid,
-      .info-grid,
       .category-grid {
         grid-template-columns: 1fr;
       }
@@ -492,8 +521,7 @@
       .side-card,
       .category-card,
       .product-content,
-      .about-card,
-      .disclosure-card {
+      .about-card {
         padding-left: 20px;
         padding-right: 20px;
       }
@@ -508,8 +536,12 @@
       }
 
       .pinterest-btn {
-        width: 100%;
-        max-width: 280px;
+        width: auto;
+        max-width: none;
+      }
+
+      .disclosure-card {
+        max-width: 100%;
       }
     }
   </style>
@@ -528,6 +560,9 @@
           rel="noopener"
           aria-label="Visit Purely Pinnables on Pinterest"
         >
+          <svg class="pinterest-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#e60023" d="M12 2C6.477 2 2 6.142 2 11.25c0 3.267 1.84 6.138 4.607 7.673-.064-.651-.121-1.65.025-2.36.132-.607.85-3.865.85-3.865s-.216-.433-.216-1.073c0-1.005.598-1.756 1.343-1.756.633 0 .938.459.938 1.01 0 .615-.4 1.534-.607 2.386-.174.712.37 1.292 1.095 1.292 1.314 0 2.324-1.34 2.324-3.273 0-1.711-1.26-2.907-3.058-2.907-2.083 0-3.306 1.516-3.306 3.084 0 .611.242 1.266.545 1.623.06.07.068.132.05.204-.055.225-.18.712-.205.811-.032.131-.106.159-.245.096-.914-.408-1.487-1.688-1.487-2.717 0-2.212 1.656-4.244 4.774-4.244 2.505 0 4.454 1.728 4.454 4.039 0 2.41-1.564 4.35-3.735 4.35-.729 0-1.414-.369-1.648-.804l-.448 1.665c-.161.607-.598 1.367-.891 1.831.671.202 1.379.312 2.114.312 5.523 0 10-4.142 10-9.25S17.523 2 12 2z"/>
+          </svg>
           Follow on Pinterest
         </a>
       </div>
@@ -573,7 +608,7 @@
           <div>
             <div class="eyebrow">Top picks</div>
             <h2>Featured finds</h2>
-            <p>Highlight your strongest click magnets here with one clear button straight to Amazon.</p>
+          
           </div>
         </div>
 
@@ -629,7 +664,7 @@
           <div>
             <div class="eyebrow">Browse favorites</div>
             <h2>Curated categories</h2>
-            <p>Tap into the product groups your Pinterest visitors are most likely to shop first.</p>
+            
           </div>
         </div>
 
@@ -686,26 +721,26 @@
     </section>
 
     <section>
-     <div class="container">
-  <div class="about-card" id="about">
-    <h2>About Purely Pinnables</h2>
-    <p>
-      Purely Pinnables is a curated shopping page built to help visitors discover stylish, practical, and popular finds in one place. Everything is organized simply so it feels easy to browse from Pinterest to product.
-    </p>
-    <ul class="clean">
-      <li>Clean bridge page for Pinterest traffic</li>
-      <li>Mobile-friendly layout</li>
-      <li>Easy to update with new links and product titles</li>
-      <li>Designed for lifestyle, home, beauty, kitchen, and pet niches</li>
-    </ul>
-  </div>
+      <div class="container">
+        <div class="about-card" id="about">
+          <h2>About Purely Pinnables</h2>
+          <p>
+            Purely Pinnables is a curated shopping page built to help visitors discover stylish, practical, and popular finds in one place. Everything is organized simply so it feels easy to browse from Pinterest to product.
+          </p>
+          <ul class="clean">
+            <li>Clean bridge page for Pinterest traffic</li>
+            <li>Mobile-friendly layout</li>
+            <li>Easy to update with new links and product titles</li>
+            <li>Designed for lifestyle, home, beauty, kitchen, and pet niches</li>
+          </ul>
+        </div>
 
-  <!-- Smaller Affiliate Disclosure -->
-  <div class="disclosure-card" id="disclosure" style="margin-top:16px; padding:16px; font-size:0.85rem;">
-    <strong>Affiliate Disclosure:</strong>
-    As an Amazon Associate, I may earn from qualifying purchases. This comes at no extra cost to you.
-  </div>
-</div>
+        <div class="disclosure-card" id="disclosure">
+          <h3>Affiliate Disclosure</h3>
+          <p>
+            As an Amazon Associate, I may earn from qualifying purchases. Some links on this site are affiliate links, which means I may earn a small commission at no extra cost to you.
+          </p>
+        </div>
       </div>
     </section>
   </main>
