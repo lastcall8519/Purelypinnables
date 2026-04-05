@@ -553,49 +553,7 @@
         max-width: 100%;
       }
     }
-    .conversion-category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-}
-
-.conversion-category-card {
-  background: linear-gradient(180deg, #fffdfb 0%, #fff8f3 100%);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  padding: 26px;
-}
-
-.featured-category {
-  border: 1px solid rgba(184, 134, 91, 0.35);
-}
-
-.conversion-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.conversion-link {
-  padding: 11px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.74);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-soft);
-}
-
-.conversion-link span {
-  font-weight: 700;
-  color: var(--accent-dark);
-}
-
-.conversion-link small {
-  color: var(--muted);
-  font-size: 0.82rem;
-}  
   </style>
-
 </head>
 <body>
   <header>
@@ -721,83 +679,67 @@
       </div>
     </section>
 
-<section id="categories">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Browse favorites</div>
-        <h2>Shop by category</h2>
-        <p>Tap into curated finds designed to feel easy to browse, giftable, and worth clicking.</p>
+    <section id="categories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Browse favorites</div>
+            <h2>Curated categories</h2>
+            
+          </div>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card">
+            <h3>Home Finds</h3>
+            <p>Decor, organization, cozy upgrades, and budget-friendly pieces that make a space feel elevated.</p>
+            <div class="category-links-list">
+              <a class="category-item-link" href="https://www.amazon.com/MIULEE-Corduroy-Decorative-Striped-Farmhouse/dp/B0BFVVKVSK?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=29763f2cbdf49a8766d716b81454bd24&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">MIULEE Corduroy Pillow Covers</a>
+              <a class="category-item-link" href="https://www.amazon.com/AmazonBasics-Adjustable-Oscillating-Standing-Pedestal/dp/B07BNGPWT4?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=ae9b9935187494e6db917d8b557a4511&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Amazon Basics Pedestal Fan</a>
+              <a class="category-item-link" href="https://www.amazon.com/DYNWELL-Arched-Length-Mounted-Bedroom/dp/B0C9TSRPWP?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=184c3f9b63f6501a8cf29786c0bb20c5&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">DYNWELL Arched Full-Length Mirror</a>
+              <a class="category-item-link" href="https://www.amazon.com/Pillows-for-Sleeping-2-Pack/dp/B01LYNW421?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=a33579686ba0c1f9e87b8de113479357&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Pillows for Sleeping 2-Pack</a>
+              <a class="category-item-link" href="https://www.amazon.com/ROOTRO-Rechargeable-Brightness-Multi-Color-Nightstand/dp/B0CM3RKR5Z?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=4d95aed4225cbc7a72ae13fa44f2a962&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">ROOTRO Rechargeable Nightstand Lamp</a>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <h3>Kitchen Favorites</h3>
+            <p>Useful gadgets, countertop must-haves, storage helpers, and everyday tools worth having.</p>
+            <div class="category-links-list">
+              <a class="category-item-link" href="https://www.amazon.com/gp/product/B0DQG2VHKJ?smid=A2MG7ZZQCAUSZ4&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=c7756e537b682b42356cc615e03192ca&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Titanium Cutting Board (Hygienic & Easy Clean)</a>
+              <a class="category-item-link" href="https://www.amazon.com/Vegetable-Chopper-Spiralizer-Slicer-Choppers/dp/B0764HS4SL?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=aad885e5fc0d417c9ba412fb191e92aa&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Fullstar Vegetable Chopper</a>
+              <a class="category-item-link" href="https://www.amazon.com/Vtopmart-Organizer-Refrigerator-Countertops-Organization/dp/B08L558KX9?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=17d868b948b21dc7d670da850d866952&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Vtopmart Pantry Organizer Bins</a>
+              <a class="category-item-link" href="https://www.amazon.com/Rubbermaid-EasyFindLids-Containers-42-Piece-Insignia/dp/B0C3MXFGYL?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=624c080c35bb3874000461771fa12281&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Rubbermaid EasyFindLids Storage Set</a>
+              <a class="category-item-link" href="https://www.amazon.com/Cuisinart-CCO-50BKN-Deluxe-Electric-Opener/dp/B001C2F5NW?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=002fb978bf5d42eea806e2b7ce7e749a&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Cuisinart Deluxe Electric Can Opener</a>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <h3>Beauty Picks</h3>
+            <p>Trending skincare, beauty tools, and self-care products that are popular for a reason.</p>
+            <div class="category-links-list">
+              <a class="category-item-link" href="https://www.amazon.com/Drunk-Elephant-Littles-Travel-Friendly-Dermatologist-Tested/dp/B0G15G56GW?utm_source=chatgpt.com&linkCode=ll2&tag=purelypinnabl-20&linkId=11aa08a2b72ac99a2ca1a3d2341e4792&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Drunk Elephant The Littles Set</a>
+              <a class="category-item-link" href="https://www.amazon.com/Dyson-Airwrap-Multi-Styler-Straight-Ceramic/dp/B0DQVKSHGN?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=75770d9ffebc936adf6d8ef6bbb2c2d7&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Dyson Airwrap Multi-Styler</a>
+              <a class="category-item-link" href="https://www.amazon.com/Medicube-Collagen-Niacinamide-Freeze-Dried-Hydrolyzed/dp/B0CM2PPNMW?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=d81dd0a3b91fd92030498a51a5038c32&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Medicube Collagen Niacinamide Mask</a>
+              <a class="category-item-link" href="https://www.amazon.com/dp/B002KANWU8?_encoding=UTF8&ie=UTF8&sp_csd=d2lkZ2V0TmFtZT1zcF9yaGZfc2VhcmNoX3BlcnNvbmFsaXplZA%3D%3D&pd_rd_w=GUD5r&content-id=amzn1.sym.ed82556b-5073-4521-a186-65fb40557bf5&pf_rd_p=ed82556b-5073-4521-a186-65fb40557bf5&pf_rd_r=TPSAAG0XEQ1WS2CW8VEJ&pd_rd_wg=bOW8C&pd_rd_r=b9d821b3-0e7f-4664-8135-864173f9fb73&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=faf9c35980e56765e1ddd412e8235d05&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">COSRX Snail Mucin Essence</a>
+              <a class="category-item-link" href="https://www.amazon.com/Roche-Posay-Hyalu-Hyaluronic-Anti-Wrinkle-Concentrate/dp/B075VX4QVM?pf_rd_p=53d84f87-8073-4df1-9740-1bf3fa798149&pf_rd_r=AMWWVKSYYWN3W9ZBX5SS&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=f4eb0c10d968ab55e64679a13240c056&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">La Roche-Posay Hyalu B5 Serum</a>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <h3>Pet Essentials</h3>
+            <p>Smart, cute, and functional finds for pet owners who want products that actually help.</p>
+            <div class="category-links-list">
+              <a class="category-item-link" href="https://www.amazon.com/Outward-Hound-Slo-Bowl-Healthy-Feeding/dp/B0787KPCPX?dib=eyJ2IjoiMSJ9.wsoBEzhRgXYXaGdxe6oCIkNtHxu3cYP7PdYYC8PDgbVbZMA1XO-kDSyCZM0hh0-2JPXbaHN75n1imEa8_05nkdtnM-nZ7EvQMYBtLbe1mBvsaG6WG0rUfnrqA9aD7MTKh6i2rHOeLgkUJGIaHGc_VvXz7KTx03CjOfgamvrYDrI.9ADA8EaVGmDnh7rEHsdAxE2XdWhtohyxuC1eG_KfkxU&dib_tag=se&qid=1775153303&refinements=p_89%3AOutward%2BHound&s=pet-supplies&sr=1-1&utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=60fac8b36b50fd36cf5bde0178a6ba5a&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Outward Hound Fun Feeder Slo Bowl</a>
+              <a class="category-item-link" href="https://www.amazon.com/Bedsure-Calming-Small-Medium-Dogs/dp/B0D78VVFWT?dib=eyJ2IjoiMSJ9.I-PQ1oNqPgXS5StkRUPO5ukQRwMhZlV4OWHYGtpy3F_me4ot4RQrrC2DXD3sAWglyq7mTpu2qsg15Qfw90ftwcLP_Q2tSVD2cGUnzVoga4zMjA-Avx91nFaQT0EtZZGSUBHC8zjB6lkaJQgp9Iga4bBiKXG1IlOHCK3jz1spgDWaWetVAdJIKTICxIvQqFY7EnxDJXkkJXIEfAa_M-1NirpLl39L5jchbD061OSWOD7-o4mk9rdVXAE-DOcDwG3CBy21RLSLvjtD0REd0keckJBg6xPRfEOZMMh71ng_GrA.ekhg7eC6GboJwpHiAfo9898T9irLgPhA0_FqCiEI208&dib_tag=se&keywords=best%2Bfriends%2Bby%2Bsheri%2Bdog%2Bbed&qid=1775153366&sr=8-3-spons&utm_source=chatgpt.com&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=2c42d4e9eba8141b45922ddf765a1a3f&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Bedsure Calming Dog Bed</a>
+              <a class="category-item-link" href="https://www.amazon.com/Amazon-Basics-Leak-Proof-Quick-Dry-Absorbency/dp/B00MW8G62E?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=f03dc4d852029bf19c2ebf353edec12f&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Amazon Basics Dog Training Pads</a>
+              <a class="category-item-link" href="https://www.amazon.com/Earth-Rated-Lavender-Scented-Completely/dp/B00BSYR7K8?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=5262d595fd7f321fa6c0ee7f3117b39c&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">Earth Rated Lavender Waste Bags</a>
+              <a class="category-item-link" href="https://www.amazon.com/INABA-Chicken-Lickable-Creamy-Variety/dp/B07D323MFZ?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=cc09e6c9b5848bb3d939429c4720a1a2&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">INABA Churu Cat Treats Variety Pack</a>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-
-    <div class="conversion-category-grid">
-
-      <!-- HOME -->
-      <article class="conversion-category-card">
-        <div class="conversion-category-top">
-          <span class="conversion-badge">Cozy Home Upgrades</span>
-          <h3>Home Finds</h3>
-          <p>Warm, aesthetic pieces that elevate your space.</p>
-        </div>
-        <div class="conversion-links">
-          <a class="conversion-link" href="https://www.amazon.com/MIULEE-Corduroy-Decorative-Striped-Farmhouse/dp/B0BFVVKVSK?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=29763f2cbdf49a8766d716b81454bd24&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>MIULEE Corduroy Pillow Covers</span>
-            <small>Soft cozy texture</small>
-          </a>
-          <a class="conversion-link" href="https://www.amazon.com/AmazonBasics-Adjustable-Oscillating-Standing-Pedestal/dp/B07BNGPWT4?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=ae9b9935187494e6db917d8b557a4511&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>Amazon Basics Pedestal Fan</span>
-            <small>Cooling everyday essential</small>
-          </a>
-          <a class="conversion-link" href="https://www.amazon.com/DYNWELL-Arched-Length-Mounted-Bedroom/dp/B0C9TSRPWP?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=184c3f9b63f6501a8cf29786c0bb20c5&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>DYNWELL Arched Mirror</span>
-            <small>Instant room upgrade</small>
-          </a>
-          <a class="conversion-link" href="https://www.amazon.com/Pillows-for-Sleeping-2-Pack/dp/B01LYNW421?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=a33579686ba0c1f9e87b8de113479357&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>Sleeping Pillows 2-Pack</span>
-            <small>Comfort refresh</small>
-          </a>
-          <a class="conversion-link" href="https://www.amazon.com/ROOTRO-Rechargeable-Brightness-Multi-Color-Nightstand/dp/B0CM3RKR5Z?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=4d95aed4225cbc7a72ae13fa44f2a962&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>Rechargeable Night Lamp</span>
-            <small>Soft ambient glow</small>
-          </a>
-        </div>
-      </article>
-
-      <!-- KITCHEN -->
-      <article class="conversion-category-card featured-category">
-        <div class="conversion-category-top">
-          <span class="conversion-badge">Kitchen Bestsellers</span>
-          <h3>Kitchen Favorites</h3>
-          <p>Smart kitchen tools that actually get used.</p>
-        </div>
-        <div class="conversion-links">
-          <a class="conversion-link" href="https://www.amazon.com/gp/product/B0DQG2VHKJ?smid=A2MG7ZZQCAUSZ4&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=c7756e537b682b42356cc615e03192ca&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>Titanium Cutting Board</span>
-            <small>Hygienic + easy clean</small>
-          </a>
-          <a class="conversion-link" href="https://www.amazon.com/Vegetable-Chopper-Spiralizer-Slicer-Choppers/dp/B0764HS4SL?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=aad885e5fc0d417c9ba412fb191e92aa&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>Vegetable Chopper</span>
-            <small>Fast meal prep</small>
-          </a>
-          <a class="conversion-link" href="https://www.amazon.com/Vtopmart-Organizer-Refrigerator-Countertops-Organization/dp/B08L558KX9?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=17d868b948b21dc7d670da850d866952&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>Pantry Organizer Bins</span>
-            <small>Clean kitchen look</small>
-          </a>
-          <a class="conversion-link" href="https://www.amazon.com/Rubbermaid-EasyFindLids-Containers-42-Piece-Insignia/dp/B0C3MXFGYL?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=624c080c35bb3874000461771fa12281&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>Food Storage Set</span>
-            <small>Organized leftovers</small>
-          </a>
-          <a class="conversion-link" href="https://www.amazon.com/Cuisinart-CCO-50BKN-Deluxe-Electric-Opener/dp/B001C2F5NW?th=1&linkCode=ll2&tag=purelypinnabl-20&linkId=002fb978bf5d42eea806e2b7ce7e749a&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow">
-            <span>Electric Can Opener</span>
-            <small>Easy countertop tool</small>
-          </a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <section>
       <div class="container">
